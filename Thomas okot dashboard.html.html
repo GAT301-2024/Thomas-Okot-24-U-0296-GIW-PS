@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>OKOT THOMAS- - LED Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { font-family: Arial; background: #121212; color: white; text-align: center; }
+    h2 { color: #00ffc3; }
+    button {
+      padding: 14px 28px; margin: 10px;
+      font-size: 18px; border: none;
+      border-radius: 6px; cursor: pointer;
+    }
+    .on { background-color: #00e676; color: white; }
+    .off { background-color: #ff1744; color: white; }
+    footer { margin-top: 50px; font-size: 14px; color: #aaa; }
+  </style>
+</head>
+<body>
+  <h2>OKOT THOMAS- LED Control Dashboard</h2>
+
+  <div>
+    <button class="on" onclick="toggleLED(1, 'on')">LED1 ON</button>
+    <button class="off" onclick="toggleLED(1, 'off')">LED1 OFF</button><br>
+
+    <button class="on" onclick="toggleLED(2, 'on')">LED2 ON</button>
+    <button class="off" onclick="toggleLED(2, 'off')">LED2 OFF</button><br>
+
+    <button class="on" onclick="toggleLED(3, 'on')">LED3 ON</button>
+    <button class="off" onclick="toggleLED(3, 'off')">LED3 OFF</button>
+  </div>
+
+  <footer>
+    <p>Powered by OKOT THOMAS- | Built with ⚡ by Group 4 Team</p>
+  </footer>
+
+  <script>
+    function toggleLED(led, state) {
+      fetch(`/led${led}?state=${state}`);
+    }
+  </script>
+</body>
+</html>
